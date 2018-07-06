@@ -1,0 +1,91 @@
+/*reset*/
+* {
+	outline: 0px;
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+	}
+body {
+	font-family: sans-serif;
+	width: 970px;
+	height: auto;
+	padding: 15px;
+	display: inline-block;
+}
+#header {
+	width: 970px;
+	height: 50px;
+	border-bottom: 2px solid black;
+	display: inline-block;
+	vertical-align: top;
+}
+#header h1 {
+	width: 550px;
+	display: inline-block;
+	color: darkmagenta;
+}
+#header h3 {
+	width: 310px;
+	margin-bottom: 20px;
+	color: blueviolet;
+	display: inline-block;
+}
+#header form {
+	width: 100px;
+	display: inline-block;
+}
+#messages {
+	margin-top: 15px;
+}
+#messages textarea {
+	width: 750px;
+	height: 100px;
+	border: 1px solid black;
+	margin: 10px 0px 10px 0px;
+	overflow-y: scroll;
+}
+#messages input {
+	width: 120px;
+	height: 25px;
+	border: 1px solid slategray;
+	background-color:rgb(25, 97, 160);
+	margin-bottom: 20px;
+}
+#posts_layout {
+	margin-bottom: 20px;
+}
+#name_layout {
+	font-size: 16pt;
+	font-weight: bold;
+	color: rgb(69, 128, 182);
+}
+#name_layout span{
+	font-size: 13pt; 
+	font-weight: normal;
+}
+#comments {
+	margin: 15px 0px 0px 30px;
+}
+#comments textarea {
+	width: 750px;
+	height: 80px;
+	border: 1px solid black;
+	margin: 10px 0px 10px 0px;
+	/*overflow-y: scroll;*/
+}
+#comments input {
+	width: 120px;
+	height: 25px;
+	border: 1px solid slategray;
+	background-color: rgb(27, 185, 35);
+	margin-bottom: 20px;
+}
+#name_comment {
+	margin: 0px 0px 3px 20px;
+	font-weight: bold;
+}
+#comment_layout {
+	margin-left: 20px;
+}
+
+

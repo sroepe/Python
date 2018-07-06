@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Users Show</title>
+      <!-- {% load static %}
+    <link rel="stylesheet" href="{% static '/css/style.css' %}" media="screen" title="no title"  charset="utf-8"> -->
+  </head>
+  <body>
+    <h1>User {{ User.id }} </h1>
+    <p>Full Name: {{ User.first_name }} {{ User.last_name }} </p>
+    <p>Email: {{ User.email }} </p>
+    <p>Created at: {{ User.created_at }} </p>
+    <p><a href="/users/{{ User.id }}/edit">Edit</a> <a href="/users/{{ User.id }}/destroy">Delete</a></p>
+  </body>
+</html>

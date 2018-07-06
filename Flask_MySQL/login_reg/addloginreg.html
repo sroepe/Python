@@ -1,0 +1,45 @@
+      <!--{% for act in range(0, loglength) %}
+        <p>{{log[act]}}</p>
+      {% endfor %} -->
+
+***************************** IMPORTANT TO ADD BACK to login_reg.py
+session["name"] = found_user[x]["first_name"]
+session["found_user"] = found_user[x]["id"]
+^^^ add to add message route
+
+
+      @app.route('/wall')
+      #query = "SELECT * FROM messages"
+      messages = mysql.query_db("SELECT * FROM messages JOIN users on messages.user_id = users.id")
+      names = mysql.query_db("SELECT users.first_name, users.last_name FROM users")
+      print names
+      print messages
+    
+      revList = list(reversed(messages))
+
+      return render_template('wall.html', messages = messages, users = names)
+
+*****************************
+
+
+        '''run similar query as below for login?
+        find_user_q = "SELECT * FROM users where email = :email"
+        data = {  "email": request.form["email"]  }
+        found_user = mysql.query_db(find_user_q, data)
+        '''
+
+
+        if is_valid:  #redirect to a new page, if not valid redirect to a different page
+        flash("Thank you {} for submitting your information!".format(request.form["first"]))
+        add_user = "INSERT INTO users (first_name, last_name, email, password, created_at, updated_at) VALUES (:first, :last, :email, :pw, NOW(), NOW())"
+        user_data = { "first": request.form["first"],
+                      "last" : request.form["last"],
+                      "email": request.form["email"],
+                      "pw": request.form["pw"]
+        }
+        user_id = mysql.query_db(add_user, user_data)
+        session["first"] = request.form["first"]
+        session["user_id"] = user_id
+        return redirect('/wall')
+        #session["name"] = user_id[0]["first_name"]
+        #session["user_id"] = user_id

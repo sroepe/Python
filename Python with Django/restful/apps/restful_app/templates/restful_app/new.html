@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Users New</title>
+      <!-- {% load static %}
+    <link rel="stylesheet" href="{% static 'amadon_first/css/style.css' %}" media="screen" title="no title"  charset="utf-8"> -->
+  </head>
+  <body>
+    <h1>Add a new user</h1>
+    <form action="/users/create" method="post">{% csrf_token %}
+      <p>First name: </p>
+      <input type="text" name="first_name">
+      <p>Last name:</p>
+      <input type="text" name="last_name">
+      <p>Email:</p>
+      <input type="text" name="email">
+      <p><input type="submit" value="Create" /></p>
+      <p><a href="/goback">Go Back</a></p>
+    </form>
+  </body>
+</html>

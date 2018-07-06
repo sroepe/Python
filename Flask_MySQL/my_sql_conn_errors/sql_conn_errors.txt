@@ -1,0 +1,9 @@
+(flaskEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Flask_MySQL/my_sql_conn_errors
+$ python servererrors.py
+
+sqlalchemy.exc.OperationalError: (_mysql_exceptions.OperationalError) (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+(flaskEnv)  
+
+
+/* I corrected the 1045 error by entering the custom password I entered when I set-up my connection.*/

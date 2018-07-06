@@ -1,0 +1,35 @@
+/*reset*/
+* {
+	outline: 0px;
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+  }
+
+body {
+  padding: 15px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 16pt;
+  margin-bottom: 15px;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+th {
+  height: 35px;
+  text-align: left;
+}
+
+tr {
+  height: 20px;
+}
+
+a {
+  font-size: 16pt;
+}

@@ -1,0 +1,699 @@
+dojoninjas_first/
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas/apps/dojoninja_first/static
+$ cd dojoninjas_first
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas/apps/dojoninja_first/static/dojoninjas_first
+$ las
+bash: las: command not found
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas/apps/dojoninja_first/static/dojoninjas_first
+$ ls
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas/apps/dojoninja_first/static/dojoninjas_first
+$ mkdir css
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas/apps/dojoninja_first/static/dojoninjas_first
+$ mkdir images
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas/apps/dojoninja_first/static/dojoninjas_first
+$ mkdir javascript
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas/apps/dojoninja_first/static/dojoninjas_first
+$ ls
+css/  images/  javascript/
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas/apps/dojoninja_first/static/dojoninjas_first
+$ cd ..
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas/apps/dojoninja_first/static
+$ cd ..
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas/apps/dojoninja_first
+$ cd ..
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas/apps
+$ cd ..
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ cd ..
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django
+$ ls
+amadon/  blogs/  dojo_ninjas/  main/  random_word/  session_words/  surveys/  time_display/  user_login/
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django
+$ cd dojo_ninjas
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ clear
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ python manage.py runserver
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 13 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+November 14, 2017 - 14:37:31
+Django version 1.11.7, using settings 'dojo_ninjas.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 13 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+November 14, 2017 - 14:39:21
+Django version 1.11.7, using settings 'dojo_ninjas.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 13 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+November 14, 2017 - 14:40:53
+Django version 1.11.7, using settings 'dojo_ninjas.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 13 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+November 14, 2017 - 14:43:07
+Django version 1.11.7, using settings 'dojo_ninjas.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Unhandled exception in thread started by <function wrapper at 0x03E0DCF0>
+Traceback (most recent call last):
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\utils\autoreload.py", line 228, in wrapper
+    fn(*args, **kwargs)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\core\management\commands\runserver.py", line 117, in inner_run
+    autoreload.raise_last_exception()
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\utils\autoreload.py", line 251, in raise_last_exception
+    six.reraise(*_exception)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\utils\autoreload.py", line 228, in wrapper
+    fn(*args, **kwargs)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\__init__.py", line 27, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\apps\registry.py", line 108, in populate
+    app_config.import_models()
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\apps\config.py", line 202, in import_models
+    self.models_module = import_module(models_module_name)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\Users\sroep\Desktop\School\Python\Django\dojo_ninjas\apps\dojoninja_first\models.py", line 6, in <module>
+    class Dojo(models.Model):
+  File "C:\Users\sroep\Desktop\School\Python\Django\dojo_ninjas\apps\dojoninja_first\models.py", line 10, in Dojo
+    Dojo = models.ForeignKey(Dojo, related_name="Ninjas")
+NameError: name 'Dojo' is not defined
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 13 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+November 14, 2017 - 14:45:37
+Django version 1.11.7, using settings 'dojo_ninjas.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 13 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+November 14, 2017 - 14:46:23
+Django version 1.11.7, using settings 'dojo_ninjas.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying sessions.0001_initial... OK
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ ls
+apps/  db.sqlite3  dojo_ninjas/  manage.py*
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ python manage.py makemigrations
+Migrations for 'dojoninja_first':
+  apps\dojoninja_first\migrations\0001_initial.py
+    - Create model Dojo
+    - Create model Ninja
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, dojoninja_first, sessions
+Running migrations:
+  Applying dojoninja_first.0001_initial... OK
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ python manage.py shell
+Python 2.7.13 (v2.7.13:a06454b1afa1, Dec 17 2016, 20:42:59) [MSC v.1500 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from apps.dojoninja_first.models import *
+>>> Dojo.objects.all()
+<QuerySet []>
+>>> Ninja.objects.all()
+<QuerySet []>
+>>> Dojo.objects.create(name="CodingDojo Silicon Valley", city="Mountain View", state="CA")
+<Dojo: Dojo object>
+>>> Dojo.objects.create(name="CodingDojo Seattle", city="Seattle", state="WA")
+<Dojo: Dojo object>
+>>> Dojo.objects.create(name="CodingDojo New York", city="New York", state="NY")
+<Dojo: Dojo object>
+>>> Dojo.objects.all().values()
+<QuerySet [{'city': u'Mountain View', 'state': u'CA', u'id': 1, 'name': u'CodingDojo Silicon Valley'}, {'city': u'Seattle', 'state': u'WA', u'id': 2, 'name': u'CodingDojo Seattle'}, {'city': u
+'New York', 'state': u'NY', u'id': 3, 'name': u'CodingDojo New York'}]>
+>>> Ninja.objects.create(first_name="Jessie", last_name="Carr")
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\query.py", line 394, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\base.py", line 808, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\base.py", line 838, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\base.py", line 924, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\base.py", line 963, in _do_insert
+    using=using, raw=raw)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\query.py", line 1076, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\sql\compiler.py", line 1107, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\backends\utils.py", line 80, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return Database.Cursor.execute(self, query, params)
+IntegrityError: NOT NULL constraint failed: dojoninja_first_ninja.Dojo_id
+>>> python manage.py migrate
+  File "<console>", line 1
+    python manage.py migrate
+                ^
+SyntaxError: invalid syntax
+>>> exit()
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, dojoninja_first, sessions
+Running migrations:
+  No migrations to apply.
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ python manage.py makemigrations
+No changes detected
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ python manage.py shell
+Python 2.7.13 (v2.7.13:a06454b1afa1, Dec 17 2016, 20:42:59) [MSC v.1500 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> Ninja.objects.create(first_name="Jessie", last_name="Carr")
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'Ninja' is not defined
+>>> from apps.dojoninja_first.models import *
+>>> Dojo.objects.all()
+<QuerySet [<Dojo: Dojo object>, <Dojo: Dojo object>, <Dojo: Dojo object>]>
+>>> Ninja.objects.all()
+<QuerySet []>
+>>> Ninja.objects.create(first_name="Jessie", last_name="Carr")
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\query.py", line 394, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\base.py", line 808, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\base.py", line 838, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\base.py", line 924, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\base.py", line 963, in _do_insert
+    using=using, raw=raw)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\query.py", line 1076, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\sql\compiler.py", line 1107, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\backends\utils.py", line 80, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return Database.Cursor.execute(self, query, params)
+IntegrityError: NOT NULL constraint failed: dojoninja_first_ninja.Dojo_id
+>>> exit()
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, dojoninja_first, sessions
+Running migrations:
+  No migrations to apply.
+  Your models have changes that are not yet reflected in a migration, and so won't be applied.
+  Run 'manage.py makemigrations' to make new migrations, and then re-run 'manage.py migrate' to apply them.
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ python manage.py makemigrations
+Migrations for 'dojoninja_first':
+  apps\dojoninja_first\migrations\0002_remove_ninja_dojo.py
+    - Remove field Dojo from ninja
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, dojoninja_first, sessions
+Running migrations:
+  Applying dojoninja_first.0002_remove_ninja_dojo... OK
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ from apps.dojoninjas_first.models import *
+bash: from: command not found
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ python manage.py shell
+Python 2.7.13 (v2.7.13:a06454b1afa1, Dec 17 2016, 20:42:59) [MSC v.1500 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from apps.dojoninjas_first.models import *
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+ImportError: No module named dojoninjas_first.models
+>>> from apps.dojoninja_first.models import *
+>>> Ninja.objects.all()
+<QuerySet []>
+>>> Ninja.objects.create(first_name="Jessie", last_name="Carr")
+<Ninja: Ninja object>
+>>> Ninja.objects.create(first_name="Edna", last_name="Duncan")
+<Ninja: Ninja object>
+>>> Ninja.objects.create(first_name="Soham", last_name="Bradley")
+<Ninja: Ninja object>
+>>> Ninja.objects.create(first_name="Theodore", last_name="Pierce")
+<Ninja: Ninja object>
+>>> Ninja.objects.create(first_name="Terra", last_name="Porter")
+<Ninja: Ninja object>
+>>> Ninja.objects.create(first_name="Sarah", last_name="George")
+<Ninja: Ninja object>
+>>> Ninja.objects.create(first_name="Neil", last_name="Peters")
+<Ninja: Ninja object>
+>>> Ninja.objects.create(first_name="Franklin", last_name="Matthews")
+<Ninja: Ninja object>
+>>> Ninja.objects.all().values("first_name")
+<QuerySet [{'first_name': u'Jessie'}, {'first_name': u'Edna'}, {'first_name': u'Soham'}, {'first_name': u'Theodore'}, {'first_name': u'Terra'}, {'first_name': u'Sarah'}, {'first_name': u'Neil'
+}, {'first_name': u'Franklin'}]>
+>>> Ninja.objects.count()
+8
+>>> Ninja.objects.create(first_name="Sara", last_name="Roepe")
+<Ninja: Ninja object>
+>>> Ninja.objects.count()
+9
+>>> D = Dojo.objects.get(id=1)
+>>> D.delete()
+(1, {u'dojoninja_first.Dojo': 1})
+>>> D.delete(2)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\base.py", line 969, in delete
+    (self._meta.object_name, self._meta.pk.attname)
+AssertionError: Dojo object can't be deleted because its id attribute is set to None.
+>>> D = Dojo.objects.get(id=2)
+>>> D.delete()
+(1, {u'dojoninja_first.Dojo': 1})
+>>> D = Dojo.objects.get(id=3)
+>>> D.delete()
+(1, {u'dojoninja_first.Dojo': 1})
+>>> Dojo.objects.all()
+<QuerySet []>
+>>> Dojo.objects.create(name="CodingDojo Silicon Valley", city="Mountain View", state="CA")
+<Dojo: Dojo object>
+>>> Dojo.objects.first()
+<Dojo: Dojo object>
+>>> Dojo.objects.first(id)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+TypeError: first() takes exactly 1 argument (2 given)
+>>> Dojo.objects.first().id
+4
+>>> Ninja.objects.all().id
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'QuerySet' object has no attribute 'id'
+>>> Ninja.objects.first().id
+1
+>>> N = Ninja.objects.all().values()
+>>> Ninja.objects.all().values()
+<QuerySet [{'first_name': u'Jessie', 'last_name': u'Carr', u'id': 1}, {'first_name': u'Edna', 'last_name': u'Duncan', u'id': 2}, {'first_name': u'Soham', 'last_name': u'Bradley', u'id': 3}, {'
+first_name': u'Theodore', 'last_name': u'Pierce', u'id': 4}, {'first_name': u'Terra', 'last_name': u'Porter', u'id': 5}, {'first_name': u'Sarah', 'last_name': u'George', u'id': 6}, {'first_nam
+e': u'Neil', 'last_name': u'Peters', u'id': 7}, {'first_name': u'Franklin', 'last_name': u'Matthews', u'id': 8}, {'first_name': u'Sara', 'last_name': u'Roepe', u'id': 9}]>
+>>> Dojo.objects.all().values()
+<QuerySet [{'city': u'Mountain View', 'state': u'CA', u'id': 4, 'name': u'CodingDojo Silicon Valley'}]>
+>>> Ninja.objects.create(Dojo=Dojo.objects.get(id=4), Ninja = Ninja.objects.get(id=1)
+... exit()
+  File "<console>", line 2
+    exit()
+       ^
+SyntaxError: invalid syntax
+>>> Ninja.objects.all()
+<QuerySet [<Ninja: Ninja object>, <Ninja: Ninja object>, <Ninja: Ninja object>, <Ninja: Ninja object>, <Ninja: Ninja object>, <Ninja: Ninja object>, <Ninja: Ninja object>, <Ninja: Ninja object
+>, <Ninja: Ninja object>]>
+>>> Ninja.objects.count()
+9
+>>> Dojo.objects.count()
+1
+>>> Ninja.objects.get(id=1).delete()
+(1, {u'dojoninja_first.Ninja': 1})
+>>> Ninja.objects.get(id=2).delete()
+(1, {u'dojoninja_first.Ninja': 1})
+>>> Ninja.objects.get(id=3).delete()
+(1, {u'dojoninja_first.Ninja': 1})
+>>> Ninja.objects.get(id=4).delete()
+(1, {u'dojoninja_first.Ninja': 1})
+>>> Ninja.objects.get(id=5).delete()
+(1, {u'dojoninja_first.Ninja': 1})
+>>> Ninja.objects.get(id=6).delete()
+(1, {u'dojoninja_first.Ninja': 1})
+>>> Ninja.objects.get(id=7).delete()
+(1, {u'dojoninja_first.Ninja': 1})
+>>> Ninja.objects.get(id=8).delete()
+(1, {u'dojoninja_first.Ninja': 1})
+>>> Ninja.objects.get(id=9).delete()
+(1, {u'dojoninja_first.Ninja': 1})
+>>> Ninja.objects.count()
+0
+>>> exit()
+
+KeyboardInterrupt
+>>> exit()
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ python manage.py makemigrations
+You are trying to add a non-nullable field 'Dojo' to ninja without a default; we can't do that (the database needs something to populate existing rows).
+Please select a fix:
+ 1) Provide a one-off default now (will be set on all existing rows with a null value for this column)
+ 2) Quit, and let me add a default in models.py
+Select an option: 1
+Please enter the default value now, as valid Python
+The datetime and django.utils.timezone modules are available, so you can do e.g. timezone.now
+Type 'exit' to exit this prompt
+>>> Dojo=4
+Invalid input: invalid syntax (<string>, line 1)
+>>> "Dojo"=4
+Invalid input: invalid syntax (<string>, line 1)
+>>> Dojo(id=4)
+Invalid input: name 'Dojo' is not defined
+>>> id=4
+Invalid input: invalid syntax (<string>, line 1)
+>>> "id"=4
+Invalid input: invalid syntax (<string>, line 1)
+>>> exit
+Traceback (most recent call last):
+  File "manage.py", line 22, in <module>
+    execute_from_command_line(sys.argv)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\core\management\__init__.py", line 364, in execute_from_command_line
+    utility.execute()
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\core\management\__init__.py", line 356, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\core\management\base.py", line 283, in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\core\management\base.py", line 330, in execute
+    output = self.handle(*args, **options)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\core\management\commands\makemigrations.py", line 177, in handle
+    migration_name=self.migration_name,
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\migrations\autodetector.py", line 47, in changes
+    changes = self._detect_changes(convert_apps, graph)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\migrations\autodetector.py", line 188, in _detect_changes
+    self.generate_added_fields()
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\migrations\autodetector.py", line 827, in generate_added_fields
+    self._generate_added_field(app_label, model_name, field_name)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\migrations\autodetector.py", line 847, in _generate_added_field
+    field.default = self.questioner.ask_not_null_addition(field_name, model_name)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\migrations\questioner.py", line 165, in ask_not_null_addition
+    return self._ask_default()
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\migrations\questioner.py", line 136, in _ask_default
+    code = input(prompt).decode(sys.stdin.encoding)
+KeyboardInterrupt
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ python manage.py shell
+Python 2.7.13 (v2.7.13:a06454b1afa1, Dec 17 2016, 20:42:59) [MSC v.1500 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> Ninja.objects.create(first_name="Sara", last_name="Roepe")
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'Ninja' is not defined
+>>> from apps.dojoninja_first.models import *
+>>> Ninja.objects.all()
+<QuerySet []>
+>>> Ninja.objects.create(first_name="Sara", last_name="Roepe")
+<Ninja: Ninja object>
+>>> exit()
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ python manage.py makemigrations
+You are trying to add a non-nullable field 'Dojo' to ninja without a default; we can't do that (the database needs something to populate existing rows).
+Please select a fix:
+ 1) Provide a one-off default now (will be set on all existing rows with a null value for this column)
+ 2) Quit, and let me add a default in models.py
+Select an option: 1
+Traceback (most recent call last):
+  File "manage.py", line 22, in <module>
+    execute_from_command_line(sys.argv)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\core\management\__init__.py", line 364, in execute_from_command_line
+    utility.execute()
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\core\management\__init__.py", line 356, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\core\management\base.py", line 283, in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\core\management\base.py", line 330, in execute
+    output = self.handle(*args, **options)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\core\management\commands\makemigrations.py", line 177, in handle
+    migration_name=self.migration_name,
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\migrations\autodetector.py", line 47, in changes
+    changes = self._detect_changes(convert_apps, graph)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\migrations\autodetector.py", line 188, in _detect_changes
+    self.generate_added_fields()
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\migrations\autodetector.py", line 827, in generate_added_fields
+    self._generate_added_field(app_label, model_name, field_name)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\migrations\autodetector.py", line 847, in _generate_added_field
+    field.default = self.questioner.ask_not_null_addition(field_name, model_name)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\migrations\questioner.py", line 159, in ask_not_null_addition
+    "Quit, and let me add a default in models.py",
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\migrations\questioner.py", line 99, in _choice_input
+    result = input("Select an option: ")
+KeyboardInterrupt
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ python manage.py makemigrations
+Migrations for 'dojoninja_first':
+  apps\dojoninja_first\migrations\0003_ninja_dojo.py
+    - Add field Dojo to ninja
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, dojoninja_first, sessions
+Running migrations:
+  Applying dojoninja_first.0003_ninja_dojo... OK
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ python manage.py shell
+Python 2.7.13 (v2.7.13:a06454b1afa1, Dec 17 2016, 20:42:59) [MSC v.1500 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> Ninja.objects.all().values()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'Ninja' is not defined
+>>> from apps.dojoninja_first.models import *
+>>> Ninja.objects.all().values()
+<QuerySet [{u'Dojo_id': None, 'first_name': u'Sara', 'last_name': u'Roepe', u'id': 10}]>
+>>> this_ninja = Ninja.objects.get(id=10)
+>>> this_dojo = Dojo.objects.get(id=4)
+>>> this.dojo.Ninjas.add(this_ninja)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'this' is not defined
+>>> Ninja.objects.all().values()
+<QuerySet [{u'Dojo_id': None, 'first_name': u'Sara', 'last_name': u'Roepe', u'id': 10}]>
+>>> N = Ninja.objects.get(id=10)
+>>> N.Dojo_id = 4
+>>> N.save()
+>>> Ninja.objects.all().values()
+<QuerySet [{u'Dojo_id': 4, 'first_name': u'Sara', 'last_name': u'Roepe', u'id': 10}]>
+>>> Ninja.objects.create(Dojo=Dojo.objects.get(id=4), first_name="John", last_name="Smith")
+<Ninja: Ninja object>
+>>> Ninja.objects.all().values()
+<QuerySet [{u'Dojo_id': 4, 'first_name': u'Sara', 'last_name': u'Roepe', u'id': 10}, {u'Dojo_id': 4, 'first_name': u'John', 'last_name': u'Smith', u'id': 11}]>
+>>> Ninja.objects.create(Dojo=Dojo.objects.get(id=4), first_name="Joe", last_name="Johnson")
+<Ninja: Ninja object>
+>>> Ninja.objects.all().values()
+<QuerySet [{u'Dojo_id': 4, 'first_name': u'Sara', 'last_name': u'Roepe', u'id': 10}, {u'Dojo_id': 4, 'first_name': u'John', 'last_name': u'Smith', u'id': 11}, {u'Dojo_id': 4, 'first_name': u'J
+oe', 'last_name': u'Johnson', u'id': 12}]>
+>>> Dojo.objects.Ninjas.first_name
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Manager' object has no attribute 'Ninjas'
+>>> Dojo.objects.all().values()
+<QuerySet [{'city': u'Mountain View', 'state': u'CA', u'id': 4, 'name': u'CodingDojo Silicon Valley'}]>
+>>> this_dojo=Dojo.objects.get(id=4)
+>>> ninjas = Ninjas.objects.filter(Dojo=this_dojo)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'Ninjas' is not defined
+>>> ninjas = Ninja.objects.filter(Dojo=this_dojo)
+>>> n=Dojo.objects.get(id=4)
+>>> n.Ninjas.all()
+<QuerySet [<Ninja: Ninja object>, <Ninja: Ninja object>, <Ninja: Ninja object>]>
+>>> n.Ninja.all().values()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Dojo' object has no attribute 'Ninja'
+>>> Ninja.objects.filter(Dojo_id=4).values()
+<QuerySet [{u'Dojo_id': 4, 'first_name': u'Sara', 'last_name': u'Roepe', u'id': 10}, {u'Dojo_id': 4, 'first_name': u'John', 'last_name': u'Smith', u'id': 11}, {u'Dojo_id': 4, 'first_name': u'J
+oe', 'last_name': u'Johnson', u'id': 12}]>
+>>> Ninja.objects.first().dojo
+
+KeyboardInterrupt
+>>> Ninja.objects.first().Dojo
+<Dojo: Dojo object>
+>>> Ninja.objects.first().Dojo.values()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Dojo' object has no attribute 'values'
+>>> Dojo.objects.first().Ninjas.all()
+<QuerySet [<Ninja: Ninja object>, <Ninja: Ninja object>, <Ninja: Ninja object>]>
+>>> Dojo.objects.create(name="CodingDojo Seattle", city="Seattle", state="WA")
+<Dojo: Dojo object>
+>>> Dojo.objects.get(id=4).values()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Dojo' object has no attribute 'values'
+>>> Dojo.objects.all().values()
+<QuerySet [{'city': u'Mountain View', 'state': u'CA', u'id': 4, 'name': u'CodingDojo Silicon Valley'}, {'city': u'Seattle', 'state': u'WA', u'id': 5, 'name': u'CodingDojo Seattle'}]>
+>>> Ninja.objects.create(Dojo=Dojo.object.get(id=5), first_name="Bob", last_name="Jones", first_name="Suzie", last_name="Sasspants", first_name="Jack", last_name="Miller")
+  File "<console>", line 1
+SyntaxError: keyword argument repeated
+>>> Ninja.objects.create(Dojo=Dojo.object.get(id=5), first_name="Bob", last_name="Jones")
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: type object 'Dojo' has no attribute 'object'
+>>> Ninja.objects.create(Dojo=Dojo.objects.get(id=5), first_name="Bob", last_name="Jones")
+<Ninja: Ninja object>
+>>> Ninja.objects.create(Dojo=Dojo.objects.get(id=5), first_name="Suzie", last_name="Sasspants")
+<Ninja: Ninja object>
+>>> Ninja.objects.create(Dojo=Dojo.objects.get(id=5), first_name="Jack", last_name="Miller")
+<Ninja: Ninja object>
+>>> Dojo.objects.get(id=5).Ninjas.all()
+<QuerySet [<Ninja: Ninja object>, <Ninja: Ninja object>, <Ninja: Ninja object>]>
+>>> Dojo.objects.get(id=5).Ninjas.all().values()
+<QuerySet [{u'Dojo_id': 5, 'first_name': u'Bob', 'last_name': u'Jones', u'id': 13}, {u'Dojo_id': 5, 'first_name': u'Suzie', 'last_name': u'Sasspants', u'id': 14}, {u'Dojo_id': 5, 'first_name':
+ u'Jack', 'last_name': u'Miller', u'id': 15}]>
+>>> Dojo.objects.create(name="CodingDojo New York", city="New York", state="NY")
+<Dojo: Dojo object>
+>>> Dojo.objects.all().values()
+<QuerySet [{'city': u'Mountain View', 'state': u'CA', u'id': 4, 'name': u'CodingDojo Silicon Valley'}, {'city': u'Seattle', 'state': u'WA', u'id': 5, 'name': u'CodingDojo Seattle'}, {'city': u
+'New York', 'state': u'NY', u'id': 6, 'name': u'CodingDojo New York'}]>
+>>> Ninja.objects.create(Dojo=Dojo.objects.get(id=6), first_name="Stan", last_name="Edwards")
+<Ninja: Ninja object>
+>>> Ninja.objects.create(Dojo=Dojo.objects.get(id=6), first_name="Randeep", last_name="Singh")
+<Ninja: Ninja object>
+>>> Ninja.objects.create(Dojo=Dojo.objects.get(id=6), first_name="Maria", last_name="Gonzalez")
+<Ninja: Ninja object>
+>>> Dojo.objects.get(id=6).Ninjas.all().values()
+<QuerySet [{u'Dojo_id': 6, 'first_name': u'Stan', 'last_name': u'Edwards', u'id': 16}, {u'Dojo_id': 6, 'first_name': u'Randeep', 'last_name': u'Singh', u'id': 17}, {u'Dojo_id': 6, 'first_name'
+: u'Maria', 'last_name': u'Gonzalez', u'id': 18}]>
+>>> Dojo.objects.first().Ninjas.all()
+<QuerySet [<Ninja: Ninja object>, <Ninja: Ninja object>, <Ninja: Ninja object>]>
+>>> Dojo.objects.first().Ninjas.all().values()
+<QuerySet [{u'Dojo_id': 4, 'first_name': u'Sara', 'last_name': u'Roepe', u'id': 10}, {u'Dojo_id': 4, 'first_name': u'John', 'last_name': u'Smith', u'id': 11}, {u'Dojo_id': 4, 'first_name': u'J
+oe', 'last_name': u'Johnson', u'id': 12}]>
+>>> Dojo.objects.last().Ninjas.all().values()
+<QuerySet [{u'Dojo_id': 6, 'first_name': u'Stan', 'last_name': u'Edwards', u'id': 16}, {u'Dojo_id': 6, 'first_name': u'Randeep', 'last_name': u'Singh', u'id': 17}, {u'Dojo_id': 6, 'first_name'
+: u'Maria', 'last_name': u'Gonzalez', u'id': 18}]>
+>>> exit()
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ python manage.py makemigrations
+You are trying to add a non-nullable field 'desc' to dojo without a default; we can't do that (the database needs something to populate existing rows).
+Please select a fix:
+ 1) Provide a one-off default now (will be set on all existing rows with a null value for this column)
+ 2) Quit, and let me add a default in models.py
+Select an option:
+Please select a valid option: 2
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ python manage.py makemigrations
+Migrations for 'dojoninja_first':
+  apps\dojoninja_first\migrations\0004_dojo_desc.py
+    - Add field desc to dojo
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, dojoninja_first, sessions
+Running migrations:
+  Applying dojoninja_first.0004_dojo_desc... OK
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ python manage.py shell
+Python 2.7.13 (v2.7.13:a06454b1afa1, Dec 17 2016, 20:42:59) [MSC v.1500 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from apps.dojoninja_first.models import *
+>>> D = Dojo.objects.get(id=5)
+>>> D.desc = "Coding Dojo's Seattle location is situated in beautiful downtown Bellevue."
+>>> D.save()
+>>> Dojo.objects.get(id=5).values()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Dojo' object has no attribute 'values'
+>>> Dojo.objects.filter(id=5).values()
+<QuerySet [{'city': u'Seattle', 'state': u'WA', 'desc': u"Coding Dojo's Seattle location is situated in beautiful downtown Bellevue.", u'id': 5, 'name': u'CodingDojo Seattle'}]>
+>>> ^A

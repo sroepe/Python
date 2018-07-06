@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Users Index</title>
+      {% load static %}
+    <link rel="stylesheet" href="{% static 'restful_app/css/style.css' %}" media="screen" title="no title"  charset="utf-8">
+  </head>
+  <body>
+    <h1>Users</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>Full Name</th>
+          <th>Email</th>
+          <th>Created At</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for User in Users %}
+        <tr>
+          <td> {{ User.id }} </td>
+          <td> <a href="/users/{{ User.id }}">{{ User.first_name }} {{ User.last_name }} </a></td>
+          <td> {{ User.email }} </td>
+          <td> {{ User.created_at }} </td>
+          <td> <a href="/users/{{User.id}}">Show</a> <a href="/users/{{User.id}}/edit">Edit</a> <a href="/users/{{User.id}}/destroy">Delete</a> </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <a href="/users/new">Add a new user</a>
+  </body>
+</html>

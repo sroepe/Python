@@ -1,0 +1,929 @@
+>>> Dojo.objects.last().Ninjas.all().values()
+<QuerySet [{u'Dojo_id': 6, 'first_name': u'Stan', 'last_name': u'Edwards', u'id': 16}, {u'Dojo_id': 6, 'first_name': u'Randeep', 'last_name': u'Singh', u'id': 17}, {u'Dojo_id': 6, 'first_name'
+: u'Maria', 'last_name': u'Gonzalez', u'id': 18}]>
+>>> exit()
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ python manage.py makemigrations
+You are trying to add a non-nullable field 'desc' to dojo without a default; we can't do that (the database needs something to populate existing rows).
+Please select a fix:
+ 1) Provide a one-off default now (will be set on all existing rows with a null value for this column)
+ 2) Quit, and let me add a default in models.py
+Select an option:
+Please select a valid option: 2
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ python manage.py makemigrations
+Migrations for 'dojoninja_first':
+  apps\dojoninja_first\migrations\0004_dojo_desc.py
+    - Add field desc to dojo
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, dojoninja_first, sessions
+Running migrations:
+  Applying dojoninja_first.0004_dojo_desc... OK
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ python manage.py shell
+Python 2.7.13 (v2.7.13:a06454b1afa1, Dec 17 2016, 20:42:59) [MSC v.1500 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from apps.dojoninja_first.models import *
+>>> D = Dojo.objects.get(id=5)
+>>> D.desc = "Coding Dojo's Seattle location is situated in beautiful downtown Bellevue."
+>>> D.save()
+>>> Dojo.objects.get(id=5).values()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Dojo' object has no attribute 'values'
+>>> Dojo.objects.filter(id=5).values()
+<QuerySet [{'city': u'Seattle', 'state': u'WA', 'desc': u"Coding Dojo's Seattle location is situated in beautiful downtown Bellevue.", u'id': 5, 'name': u'CodingDojo Seattle'}]>
+>>> ^A
+
+KeyboardInterrupt
+>>> exit()
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ clear
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ ls
+apps/  db.sqlite3  dojo_ninjas/  manage.py*
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ cd apps
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas/apps
+$ ls
+__init__.py  __init__.pyc  dojoninja_first/
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas/apps
+$ mkdir book_authors
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas/apps
+$ ls
+__init__.py  __init__.pyc  dojoninja_first/
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas/apps
+$ python ../manage.py startapp book_authors
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas/apps
+$ ls
+__init__.py  __init__.pyc  book_authors/  dojoninja_first/
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas/apps
+$ cd book_authors
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas/apps/book_authors
+$ ls
+__init__.py  admin.py  apps.py  migrations/  models.py  tests.py  views.py
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas/apps/book_authors
+$ touch urls.py
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas/apps/book_authors
+$ ls
+__init__.py  admin.py  apps.py  migrations/  models.py  tests.py  urls.py  views.py
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas/apps/book_authors
+$ mkdir templates
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas/apps/book_authors
+$ ls
+__init__.py  admin.py  apps.py  migrations/  models.py  templates/  tests.py  urls.py  views.py
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas/apps/book_authors
+$ mkdir static
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas/apps/book_authors
+$ ls
+__init__.py  admin.py  apps.py  migrations/  models.py  static/  templates/  tests.py  urls.py  views.py
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas/apps/book_authors
+$ cd templates
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas/apps/book_authors/templates
+$ mkdir book_authors
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas/apps/book_authors/templates
+$ ls
+book_authors/
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas/apps/book_authors/templates
+$ cd ..
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas/apps/book_authors
+$ ls
+__init__.py  admin.py  apps.py  migrations/  models.py  static/  templates/  tests.py  urls.py  views.py
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas/apps/book_authors
+$ cd static
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas/apps/book_authors/static
+$ ls
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas/apps/book_authors/static
+$ mkdir book_authors
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas/apps/book_authors/static
+$ ls
+book_authors/
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas/apps/book_authors/static
+$ cd book_authors
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas/apps/book_authors/static/book_authors
+$ ls
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas/apps/book_authors/static/book_authors
+$ mkdir css
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas/apps/book_authors/static/book_authors
+$ mkdir images
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas/apps/book_authors/static/book_authors
+$ mkdir javascript
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas/apps/book_authors/static/book_authors
+$ ls
+css/  images/  javascript/
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas/apps/book_authors/static/book_authors
+$ cd ..
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas/apps/book_authors/static
+$ cd ..
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas/apps/book_authors
+$ cd ..
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas/apps
+$ cd ..
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ ls
+apps/  db.sqlite3  dojo_ninjas/  manage.py*
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ python manage.py makemigrations
+Migrations for 'dojoninja_first':
+  apps\dojoninja_first\migrations\0005_auto_20171114_1645.py
+    - Create model Author
+    - Create model Book
+    - Add field Books to author
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, dojoninja_first, sessions
+Running migrations:
+  Applying dojoninja_first.0005_auto_20171114_1645... OK
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ python manage.py shell
+Python 2.7.13 (v2.7.13:a06454b1afa1, Dec 17 2016, 20:42:59) [MSC v.1500 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> Books.objects.first().authors
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'Books' is not defined
+>>> from apps.book_authors.models import *
+>>> Books.objects.first().authors
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'Books' is not defined
+>>> Book.objects.create(name="Rebel with Vigor", desc="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et
+")
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'Book' is not defined
+>>> Book.objects.create(name="Knight with Big Eyes", desc="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor")
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'Book' is not defined
+>>> exit()
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ python manage.py makemigrations
+Migrations for 'dojoninja_first':
+  apps\dojoninja_first\migrations\0006_auto_20171114_1709.py
+    - Remove field Books from author
+    - Delete model Author
+    - Delete model Book
+Migrations for 'book_authors':
+  apps\book_authors\migrations\0001_initial.py
+    - Create model Author
+    - Create model Book
+    - Add field Books to author
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, book_authors, contenttypes, dojoninja_first, sessions
+Running migrations:
+  Applying book_authors.0001_initial... OK
+  Applying dojoninja_first.0006_auto_20171114_1709... OK
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ python manage.py shell
+Python 2.7.13 (v2.7.13:a06454b1afa1, Dec 17 2016, 20:42:59) [MSC v.1500 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from apps.book_authors.models import *
+>>> Book.objects.all()
+<QuerySet []>
+>>> Author.objects.all()
+<QuerySet []>
+>>> Author.objects.first().books
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'NoneType' object has no attribute 'books'
+>>> Book.objects.create(name="C sharp")
+<Book: Book object>
+>>> Book.objects.create(name="Java")
+<Book: Book object>
+>>> Book.objects.create(name="Python")
+<Book: Book object>
+>>> Book.objects.create(name="PHP")
+<Book: Book object>
+>>> Book.objects.create(name="Ruby")
+<Book: Book object>
+>>> Author.objects.create(first_name="Mike")
+<Author: Author object>
+>>> Author.objects.create(first_name="Speros")
+<Author: Author object>
+>>> Author.objects.create(first_name="John")
+<Author: Author object>
+>>> Author.objects.create(first_name="Jadee")
+<Author: Author object>
+>>> Author.objects.create(first_name="Jay")
+<Author: Author object>
+>>> Author.objects.all().values()
+<QuerySet [{'first_name': u'Mike', 'last_name': u'', 'created_at': datetime.datetime(2017, 11, 15, 1, 13, 7, 265000, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 11, 15, 1, 13, 7, 2650
+00, tzinfo=<UTC>), 'email': u'', u'id': 1}, {'first_name': u'Speros', 'last_name': u'', 'created_at': datetime.datetime(2017, 11, 15, 1, 13, 14, 568000, tzinfo=<UTC>), 'updated_at': datetime.d
+atetime(2017, 11, 15, 1, 13, 14, 568000, tzinfo=<UTC>), 'email': u'', u'id': 2}, {'first_name': u'John', 'last_name': u'', 'created_at': datetime.datetime(2017, 11, 15, 1, 13, 21, 75000, tzinf
+o=<UTC>), 'updated_at': datetime.datetime(2017, 11, 15, 1, 13, 21, 75000, tzinfo=<UTC>), 'email': u'', u'id': 3}, {'first_name': u'Jadee', 'last_name': u'', 'created_at': datetime.datetime(201
+7, 11, 15, 1, 13, 26, 991000, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 11, 15, 1, 13, 26, 991000, tzinfo=<UTC>), 'email': u'', u'id': 4}, {'first_name': u'Jay', 'last_name': u'', '
+created_at': datetime.datetime(2017, 11, 15, 1, 13, 35, 253000, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 11, 15, 1, 13, 35, 253000, tzinfo=<UTC>), 'email': u'', u'id': 5}]>
+>>> exit()
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ python manage.py makemigrations
+You are trying to add a non-nullable field 'notes' to author without a default; we can't do that (the database needs something to populate existing rows).
+Please select a fix:
+ 1) Provide a one-off default now (will be set on all existing rows with a null value for this column)
+ 2) Quit, and let me add a default in models.py
+Select an option: 2
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ python manage.py makemigrations
+Migrations for 'book_authors':
+  apps\book_authors\migrations\0002_author_notes.py
+    - Add field notes to author
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, book_authors, contenttypes, dojoninja_first, sessions
+Running migrations:
+  Applying book_authors.0002_author_notes... OK
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ python manage.py shell
+Python 2.7.13 (v2.7.13:a06454b1afa1, Dec 17 2016, 20:42:59) [MSC v.1500 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from apps.book_authors.models import *
+>>> Author.objects.all()
+<QuerySet [<Author: Author object>, <Author: Author object>, <Author: Author object>, <Author: Author object>, <Author: Author object>]>
+>>> B = Book.objects.get(id=5)
+>>> B.name = "C#"
+>>> B.save()
+>>> Book.objects.get(id=5).name
+u'C#'
+>>> A = Author.objects.get(id=5)
+>>> B.first_name="Ketul"
+>>> B.save()
+>>> Book.objects.get(id=5).first_name
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Book' object has no attribute 'first_name'
+>>> Book.objects.all().values()
+<QuerySet [{'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 4, 931000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 4, 931000, tzinfo=<UTC>), 'desc': u'', u'id': 1,
+ 'name': u'C sharp'}, {'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 14, 527000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 14, 527000, tzinfo=<UTC>), 'desc': u
+'', u'id': 2, 'name': u'Java'}, {'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 24, 606000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 24, 606000, tzinfo=<UTC>),
+ 'desc': u'', u'id': 3, 'name': u'Python'}, {'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 32, 54000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 32, 54000, tzin
+fo=<UTC>), 'desc': u'', u'id': 4, 'name': u'PHP'}, {'updated_at': datetime.datetime(2017, 11, 15, 1, 19, 6, 520000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 39, 7950
+00, tzinfo=<UTC>), 'desc': u'', u'id': 5, 'name': u'C#'}]>
+>>> A = Author.objects.get(id=5).first_name
+>>> A.first_name = "Ketul"
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'unicode' object has no attribute 'first_name'
+>>> A.first_name = "Ketul"
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'unicode' object has no attribute 'first_name'
+>>> Author.objects.get(id=5).first_name
+u'Jay'
+>>> A = Author.objects.get(id=5)
+>>> A.first_name = "Ketul"
+>>> A.save()
+>>> Author.objects.get(id=5).first_name
+u'Ketul'
+>>> Author.objects.all().values()
+<QuerySet [{'first_name': u'Mike', 'last_name': u'', 'created_at': datetime.datetime(2017, 11, 15, 1, 13, 7, 265000, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 11, 15, 1, 13, 7, 2650
+00, tzinfo=<UTC>), 'email': u'', 'notes': None, u'id': 1}, {'first_name': u'Speros', 'last_name': u'', 'created_at': datetime.datetime(2017, 11, 15, 1, 13, 14, 568000, tzinfo=<UTC>), 'updated_
+at': datetime.datetime(2017, 11, 15, 1, 13, 14, 568000, tzinfo=<UTC>), 'email': u'', 'notes': None, u'id': 2}, {'first_name': u'John', 'last_name': u'', 'created_at': datetime.datetime(2017, 1
+1, 15, 1, 13, 21, 75000, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 11, 15, 1, 13, 21, 75000, tzinfo=<UTC>), 'email': u'', 'notes': None, u'id': 3}, {'first_name': u'Jadee', 'last_na
+me': u'', 'created_at': datetime.datetime(2017, 11, 15, 1, 13, 26, 991000, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 11, 15, 1, 13, 26, 991000, tzinfo=<UTC>), 'email': u'', 'notes':
+ None, u'id': 4}, {'first_name': u'Ketul', 'last_name': u'', 'created_at': datetime.datetime(2017, 11, 15, 1, 13, 35, 253000, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 11, 15, 1, 22
+, 32, 860000, tzinfo=<UTC>), 'email': u'', 'notes': None, u'id': 5}]>
+>>> Book.objects.all().values()
+<QuerySet [{'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 4, 931000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 4, 931000, tzinfo=<UTC>), 'desc': u'', u'id': 1,
+ 'name': u'C sharp'}, {'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 14, 527000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 14, 527000, tzinfo=<UTC>), 'desc': u
+'', u'id': 2, 'name': u'Java'}, {'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 24, 606000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 24, 606000, tzinfo=<UTC>),
+ 'desc': u'', u'id': 3, 'name': u'Python'}, {'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 32, 54000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 32, 54000, tzin
+fo=<UTC>), 'desc': u'', u'id': 4, 'name': u'PHP'}, {'updated_at': datetime.datetime(2017, 11, 15, 1, 19, 6, 520000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 39, 7950
+00, tzinfo=<UTC>), 'desc': u'', u'id': 5, 'name': u'C#'}]>
+>>> this_author = Author.objects.get(id=1)
+>>> this_book = Book.objects.first()
+>>> this_book.authors.add(this_author)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Book' object has no attribute 'authors'
+>>> this_book = Book.objects.first()
+>>> this_author = Author.objects.first()
+>>> this_author.books.add(this_book)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Author' object has no attribute 'books'
+>>> exit()
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ python manage.py makemigrations
+System check identified some issues:
+
+WARNINGS:
+book_authors.Author.Books: (fields.W340) null has no effect on ManyToManyField.
+Migrations for 'book_authors':
+  apps\book_authors\migrations\0003_auto_20171114_1733.py
+    - Alter field Books on author
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ python manage.py migrate
+System check identified some issues:
+
+WARNINGS:
+book_authors.Author.Books: (fields.W340) null has no effect on ManyToManyField.
+Operations to perform:
+  Apply all migrations: admin, auth, book_authors, contenttypes, dojoninja_first, sessions
+Running migrations:
+  Applying book_authors.0003_auto_20171114_1733... OK
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ python manage.py shell
+Python 2.7.13 (v2.7.13:a06454b1afa1, Dec 17 2016, 20:42:59) [MSC v.1500 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from apps.book_authors.models import *
+>>> Author.objects.get().Books
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\query.py", line 384, in get
+    (self.model._meta.object_name, num)
+MultipleObjectsReturned: get() returned more than one Author -- it returned 5!
+>>> Author.objects.filter().Books
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'QuerySet' object has no attribute 'Books'
+>>> Author.objects.all()
+<QuerySet [<Author: Author object>, <Author: Author object>, <Author: Author object>, <Author: Author object>, <Author: Author object>]>
+>>> this_book = Book.objects.get(id=1)
+>>> this_author = Author.objects.get(id=1)
+>>> this_author.Books.add(this_book)
+>>> Book.objects.filter(id=1).values()
+<QuerySet [{'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 4, 931000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 4, 931000, tzinfo=<UTC>), 'desc': u'', u'id': 1,
+ 'name': u'C sharp'}]>
+>>> Author.objects.filter(id=1).values()
+<QuerySet [{'first_name': u'Mike', 'last_name': u'', 'created_at': datetime.datetime(2017, 11, 15, 1, 13, 7, 265000, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 11, 15, 1, 13, 7, 2650
+00, tzinfo=<UTC>), 'email': u'', 'notes': None, u'id': 1}]>
+>>> this_author.Books.all()
+<QuerySet [<Book: Book object>]>
+>>> this_author.Books.all().values()
+<QuerySet [{'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 4, 931000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 4, 931000, tzinfo=<UTC>), 'desc': u'', u'id': 1,
+ 'name': u'C sharp'}]>
+>>> this_book = Book.objects.get(id=2)
+>>> this_author = Author.objects.get(id=1)
+>>> this_author.Books.add(this_book)
+>>> this_author.Books.all().values(name)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'name' is not defined
+>>> this_author.Books.name
+>>> this_author.Books.all().name
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'QuerySet' object has no attribute 'name'
+>>> this_author.Books.all()
+<QuerySet [<Book: Book object>, <Book: Book object>]>
+>>> this_author.Books.all().values()
+<QuerySet [{'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 4, 931000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 4, 931000, tzinfo=<UTC>), 'desc': u'', u'id': 1,
+ 'name': u'C sharp'}, {'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 14, 527000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 14, 527000, tzinfo=<UTC>), 'desc': u
+'', u'id': 2, 'name': u'Java'}]>
+>>> this_book = Author.objects.get(id=1)
+>>> this_book.Authors.all().values()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Author' object has no attribute 'Authors'
+>>> this_book.Authors.all().values()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Author' object has no attribute 'Authors'
+>>> this_book.Authors.all().values
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Author' object has no attribute 'Authors'
+>>> this_author.Books.all()
+<QuerySet [<Book: Book object>, <Book: Book object>]>
+>>> this_book.Authors.all()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Author' object has no attribute 'Authors'
+>>> Book.objects.all().values()
+<QuerySet [{'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 4, 931000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 4, 931000, tzinfo=<UTC>), 'desc': u'', u'id': 1,
+ 'name': u'C sharp'}, {'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 14, 527000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 14, 527000, tzinfo=<UTC>), 'desc': u
+'', u'id': 2, 'name': u'Java'}, {'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 24, 606000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 24, 606000, tzinfo=<UTC>),
+ 'desc': u'', u'id': 3, 'name': u'Python'}, {'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 32, 54000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 32, 54000, tzin
+fo=<UTC>), 'desc': u'', u'id': 4, 'name': u'PHP'}, {'updated_at': datetime.datetime(2017, 11, 15, 1, 19, 6, 520000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 39, 7950
+00, tzinfo=<UTC>), 'desc': u'', u'id': 5, 'name': u'C#'}]>
+>>> exit()
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ python manage.py makemigrations
+System check identified some issues:
+
+WARNINGS:
+book_authors.Author.Books: (fields.W340) null has no effect on ManyToManyField.
+No changes detected
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ python manage.py migrate
+System check identified some issues:
+
+WARNINGS:
+book_authors.Author.Books: (fields.W340) null has no effect on ManyToManyField.
+Operations to perform:
+  Apply all migrations: admin, auth, book_authors, contenttypes, dojoninja_first, sessions
+Running migrations:
+  No migrations to apply.
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ python manage.py shell
+Python 2.7.13 (v2.7.13:a06454b1afa1, Dec 17 2016, 20:42:59) [MSC v.1500 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from apps.book_authors.models import *
+>>> Author.objects.get(id=1).Books
+<django.db.models.fields.related_descriptors.ManyRelatedManager object at 0x04416650>
+>>> Author.objects.get(id=1).Books.all()
+<QuerySet [<Book: Book object>, <Book: Book object>]>
+>>> Book.objects.get(id=1).Authors.all()
+<QuerySet [<Author: Author object>]>
+>>> x=Book.objects.get(id=1).Authors.all()
+>>> for author in x:
+...     print author.name
+...
+Traceback (most recent call last):
+  File "<console>", line 2, in <module>
+AttributeError: 'Author' object has no attribute 'name'
+>>> x=Book.objects.get(id=1).Authors.all()
+>>> for author in x:
+...     print author.first_name
+...
+Mike
+>>> Author.objects.get(id=1).Books.all().values()
+<QuerySet [{'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 4, 931000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 4, 931000, tzinfo=<UTC>), 'desc': u'', u'id': 1,
+ 'name': u'C sharp'}, {'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 14, 527000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 14, 527000, tzinfo=<UTC>), 'desc': u
+'', u'id': 2, 'name': u'Java'}]>
+>>> Book.objects.get(id=1).Authors.all().values()
+<QuerySet [{'first_name': u'Mike', 'last_name': u'', 'created_at': datetime.datetime(2017, 11, 15, 1, 13, 7, 265000, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 11, 15, 1, 13, 7, 2650
+00, tzinfo=<UTC>), 'email': u'', 'notes': None, u'id': 1}]>
+>>> Book.objects.get(id=2).Authors.all().values()
+<QuerySet [{'first_name': u'Mike', 'last_name': u'', 'created_at': datetime.datetime(2017, 11, 15, 1, 13, 7, 265000, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 11, 15, 1, 13, 7, 2650
+00, tzinfo=<UTC>), 'email': u'', 'notes': None, u'id': 1}]>
+>>> Author.objects.get(id=2).all().values()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Author' object has no attribute 'all'
+>>> Author.objects.get(id=2)
+<Author: Author object>
+>>> this_book = Book.objects.get(id=1)
+>>> this_author = Author.objects.get(id=2)
+>>> this_author.Books.add(this_book)
+>>>
+>>> Author.objects.get(id=2).Books.all().values()
+<QuerySet [{'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 4, 931000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 4, 931000, tzinfo=<UTC>), 'desc': u'', u'id': 1,
+ 'name': u'C sharp'}]>
+>>> this_book = Book.objects.get(id=2)
+>>> this_author = Author.objects.get(id=2)
+>>> this_author.Books.add(this_book)
+>>> Author.objects.get(id=2).Books.all().values()
+<QuerySet [{'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 4, 931000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 4, 931000, tzinfo=<UTC>), 'desc': u'', u'id': 1,
+ 'name': u'C sharp'}, {'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 14, 527000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 14, 527000, tzinfo=<UTC>), 'desc': u
+'', u'id': 2, 'name': u'Java'}]>
+>>> this_book = Book.objects.get(id=3)
+>>> this_author = Author.objects.get(id=2)
+>>> this_author.Books.add(this_book)
+>>> Author.objects.get(id=2).all().values()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Author' object has no attribute 'all'
+>>>
+>>> Author.objects.get(id=2).all().values()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Author' object has no attribute 'all'
+>>> Author.objects.get(id=2).all().values()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Author' object has no attribute 'all'
+>>>
+>>> Author.objects.get(id=2).all().values()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Author' object has no attribute 'all'
+>>> Author.objects.get(id=2)
+<Author: Author object>
+>>> Author.objects.get(id=2).all().values()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Author' object has no attribute 'all'
+>>> exit()
+(djangoEnv)
+sroep@LAPTOP-SLNL6L71 MINGW64 ~/Desktop/School/Python/Django/dojo_ninjas
+$ python manage.py shell
+Python 2.7.13 (v2.7.13:a06454b1afa1, Dec 17 2016, 20:42:59) [MSC v.1500 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from apps.book_authors.models import *
+>>> Author.objects.get(ids=2).Books.all().values()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\query.py", line 371, in get
+    clone = self.filter(*args, **kwargs)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\query.py", line 784, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\query.py", line 802, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\sql\query.py", line 1250, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\sql\query.py", line 1276, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\sql\query.py", line 1154, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\sql\query.py", line 1034, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\sql\query.py", line 1352, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+FieldError: Cannot resolve keyword 'ids' into field. Choices are: Books, created_at, email, first_name, id, last_name, notes, updated_at
+>>> Author.objects.get(id=2).Books.all().values()
+<QuerySet [{'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 4, 931000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 4, 931000, tzinfo=<UTC>), 'desc': u'', u'id': 1,
+ 'name': u'C sharp'}, {'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 14, 527000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 14, 527000, tzinfo=<UTC>), 'desc': u
+'', u'id': 2, 'name': u'Java'}, {'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 24, 606000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 24, 606000, tzinfo=<UTC>),
+ 'desc': u'', u'id': 3, 'name': u'Python'}]>
+>>> this_book = Book.objects.get(id=1)
+>>> this_author = Author.objects.get(id=3)
+>>> this_author.Books.add(this_book)
+>>> Author.objects.get(id=3).Books.all().values()
+<QuerySet [{'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 4, 931000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 4, 931000, tzinfo=<UTC>), 'desc': u'', u'id': 1,
+ 'name': u'C sharp'}]>
+>>> this_book = Book.objects.get(id=2)
+>>> this_author = Author.objects.get(id=3)
+>>> this_author.Books.add(this_book)
+>>> Author.objects.get(id=2).Books.all().values()
+<QuerySet [{'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 4, 931000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 4, 931000, tzinfo=<UTC>), 'desc': u'', u'id': 1,
+ 'name': u'C sharp'}, {'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 14, 527000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 14, 527000, tzinfo=<UTC>), 'desc': u
+'', u'id': 2, 'name': u'Java'}, {'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 24, 606000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 24, 606000, tzinfo=<UTC>),
+ 'desc': u'', u'id': 3, 'name': u'Python'}]>
+>>> Author.objects.get(id=3).Books.all().values()
+<QuerySet [{'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 4, 931000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 4, 931000, tzinfo=<UTC>), 'desc': u'', u'id': 1,
+ 'name': u'C sharp'}, {'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 14, 527000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 14, 527000, tzinfo=<UTC>), 'desc': u
+'', u'id': 2, 'name': u'Java'}]>
+>>> this_book = Book.objects.get(id=3)
+>>> this_author = Author.objects.get(id=3)
+>>> this_author.Books.add(this_book)
+>>> Author.objects.get(id=3).Books.all().values()
+<QuerySet [{'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 4, 931000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 4, 931000, tzinfo=<UTC>), 'desc': u'', u'id': 1,
+ 'name': u'C sharp'}, {'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 14, 527000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 14, 527000, tzinfo=<UTC>), 'desc': u
+'', u'id': 2, 'name': u'Java'}, {'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 24, 606000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 24, 606000, tzinfo=<UTC>),
+ 'desc': u'', u'id': 3, 'name': u'Python'}]>
+>>> this_book = Book.objects.get(id=4)
+>>> this_author = Author.objects.get(id=3)
+>>> this_author.Books.add(this_book)
+>>> Author.objects.get(id=3).Books.all().values()
+<QuerySet [{'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 4, 931000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 4, 931000, tzinfo=<UTC>), 'desc': u'', u'id': 1,
+ 'name': u'C sharp'}, {'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 14, 527000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 14, 527000, tzinfo=<UTC>), 'desc': u
+'', u'id': 2, 'name': u'Java'}, {'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 24, 606000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 24, 606000, tzinfo=<UTC>),
+ 'desc': u'', u'id': 3, 'name': u'Python'}, {'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 32, 54000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 32, 54000, tzin
+fo=<UTC>), 'desc': u'', u'id': 4, 'name': u'PHP'}]>
+>>> this_book = Book.objects.all()
+>>> this_author = Author.objects.get(id=4)
+>>> this_author.Books.add(this_book)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\fields\related_descriptors.py", line 934, in add
+    self._add_items(self.source_field_name, self.target_field_name, *objs)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\fields\related_descriptors.py", line 1083, in _add_items
+    '%s__in' % target_field_name: new_ids,
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\query.py", line 784, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\query.py", line 802, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\sql\query.py", line 1250, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\sql\query.py", line 1276, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\sql\query.py", line 1206, in build_filter
+    condition = lookup_class(lhs, value)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\lookups.py", line 24, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\fields\related_lookups.py", line 56, in get_prep_lookup
+    self.rhs = [target_field.get_prep_value(v) for v in self.rhs]
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\fields\__init__.py", line 966, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string or a number, not 'QuerySet'
+>>> Author.objects.get(id=4).Books.all().values()
+<QuerySet []>
+>>> this_author = Author.objects.get(id=4)
+>>> this_author.Books.add().all()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'NoneType' object has no attribute 'all'
+>>> this_author.Books.all().add()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'QuerySet' object has no attribute 'add'
+>>> this_book = Book.objects.get(id=1)
+>>> this_author = Author.objects.get(id=4)
+>>> this_author.Books.add(this_book)
+>>> Author.objects.get(id=4).Books.all().values()
+<QuerySet [{'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 4, 931000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 4, 931000, tzinfo=<UTC>), 'desc': u'', u'id': 1,
+ 'name': u'C sharp'}]>
+>>> this_book = Book.objects.get(id=2)
+>>> this_author = Author.objects.get(id=4)
+>>> this_author.Books.add(this_book)
+>>> this_book = Book.objects.get(id=3)
+>>> this_author = Author.objects.get(id=4)
+>>> this_author.Books.add(this_book)
+>>> this_book = Book.objects.get(id=4)
+>>> this_author = Author.objects.get(id=4)
+>>> this_author.Books.add(this_book)
+>>> this_book = Book.objects.get(id=5)
+>>> this_author = Author.objects.get(id=4)
+>>> this_author.Books.add(this_book)
+>>> Author.objects.get(id=4).Books.all().values()
+<QuerySet [{'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 4, 931000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 4, 931000, tzinfo=<UTC>), 'desc': u'', u'id': 1,
+ 'name': u'C sharp'}, {'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 14, 527000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 14, 527000, tzinfo=<UTC>), 'desc': u
+'', u'id': 2, 'name': u'Java'}, {'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 24, 606000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 24, 606000, tzinfo=<UTC>),
+ 'desc': u'', u'id': 3, 'name': u'Python'}, {'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 32, 54000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 32, 54000, tzin
+fo=<UTC>), 'desc': u'', u'id': 4, 'name': u'PHP'}, {'updated_at': datetime.datetime(2017, 11, 15, 1, 19, 6, 520000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 39, 7950
+00, tzinfo=<UTC>), 'desc': u'', u'id': 5, 'name': u'C#'}]>
+>>> Book.objects.get(id=5).name
+u'C#'
+>>> Book.objects.get(id=3).Authors.all().first_name
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'QuerySet' object has no attribute 'first_name'
+>>> Book.objects.get(id=3).Authors.all(first_name)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'first_name' is not defined
+>>> Book.objects.get(id=3).Authors.all()
+<QuerySet [<Author: Author object>, <Author: Author object>, <Author: Author object>]>
+>>> Book.objects.get(id=3).Authors.all().values()
+<QuerySet [{'first_name': u'Speros', 'last_name': u'', 'created_at': datetime.datetime(2017, 11, 15, 1, 13, 14, 568000, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 11, 15, 1, 13, 14,
+568000, tzinfo=<UTC>), 'email': u'', 'notes': None, u'id': 2}, {'first_name': u'John', 'last_name': u'', 'created_at': datetime.datetime(2017, 11, 15, 1, 13, 21, 75000, tzinfo=<UTC>), 'updated
+_at': datetime.datetime(2017, 11, 15, 1, 13, 21, 75000, tzinfo=<UTC>), 'email': u'', 'notes': None, u'id': 3}, {'first_name': u'Jadee', 'last_name': u'', 'created_at': datetime.datetime(2017,
+11, 15, 1, 13, 26, 991000, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 11, 15, 1, 13, 26, 991000, tzinfo=<UTC>), 'email': u'', 'notes': None, u'id': 4}]>
+>>> A = Book.objects.get(id=3).Authors.get(id=1)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\query.py", line 380, in get
+    self.model._meta.object_name
+DoesNotExist: Author matching query does not exist.
+>>> A = Book.objects.get(id=3).Authors.filter(id=1)
+>>> A.delete()
+(0, {})
+>>> Book.objects.get(id=3).Authors.all().values()
+<QuerySet [{'first_name': u'Speros', 'last_name': u'', 'created_at': datetime.datetime(2017, 11, 15, 1, 13, 14, 568000, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 11, 15, 1, 13, 14,
+568000, tzinfo=<UTC>), 'email': u'', 'notes': None, u'id': 2}, {'first_name': u'John', 'last_name': u'', 'created_at': datetime.datetime(2017, 11, 15, 1, 13, 21, 75000, tzinfo=<UTC>), 'updated
+_at': datetime.datetime(2017, 11, 15, 1, 13, 21, 75000, tzinfo=<UTC>), 'email': u'', 'notes': None, u'id': 3}, {'first_name': u'Jadee', 'last_name': u'', 'created_at': datetime.datetime(2017,
+11, 15, 1, 13, 26, 991000, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 11, 15, 1, 13, 26, 991000, tzinfo=<UTC>), 'email': u'', 'notes': None, u'id': 4}]>
+>>> Book.objects.get(id=3).Authors.count()
+3
+>>> A = Book.objects.get(id=3).Authors.get(id=1)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\query.py", line 380, in get
+    self.model._meta.object_name
+DoesNotExist: Author matching query does not exist.
+>>> B=Book.objects.get(id=3).filter(Authors_id=1)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Book' object has no attribute 'filter'
+>>> this_book = Book.objects.get(id=3)
+>>> this_author = Author.objects.get(id
+...
+... Author.objects.get(id=1)
+  File "<console>", line 3
+    Author.objects.get(id=1)
+         ^
+SyntaxError: invalid syntax
+>>> b = Book.objects.get(id=3)
+>>> a = Author.objects.get(id=1)
+>>> b.entry_set.remove(e)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Book' object has no attribute 'entry_set'
+>>> b.entry_set().remove(e)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Book' object has no attribute 'entry_set'
+>>> Book.objects.get(id=3).Author_id
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Book' object has no attribute 'Author_id'
+>>> Book.objects.all().values()
+<QuerySet [{'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 4, 931000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 4, 931000, tzinfo=<UTC>), 'desc': u'', u'id': 1,
+ 'name': u'C sharp'}, {'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 14, 527000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 14, 527000, tzinfo=<UTC>), 'desc': u
+'', u'id': 2, 'name': u'Java'}, {'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 24, 606000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 24, 606000, tzinfo=<UTC>),
+ 'desc': u'', u'id': 3, 'name': u'Python'}, {'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 32, 54000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 32, 54000, tzin
+fo=<UTC>), 'desc': u'', u'id': 4, 'name': u'PHP'}, {'updated_at': datetime.datetime(2017, 11, 15, 1, 19, 6, 520000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 39, 7950
+00, tzinfo=<UTC>), 'desc': u'', u'id': 5, 'name': u'C#'}]>
+>>> Book.objects.get(id=3).Authors.all().values()
+<QuerySet [{'first_name': u'Speros', 'last_name': u'', 'created_at': datetime.datetime(2017, 11, 15, 1, 13, 14, 568000, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 11, 15, 1, 13, 14,
+568000, tzinfo=<UTC>), 'email': u'', 'notes': None, u'id': 2}, {'first_name': u'John', 'last_name': u'', 'created_at': datetime.datetime(2017, 11, 15, 1, 13, 21, 75000, tzinfo=<UTC>), 'updated
+_at': datetime.datetime(2017, 11, 15, 1, 13, 21, 75000, tzinfo=<UTC>), 'email': u'', 'notes': None, u'id': 3}, {'first_name': u'Jadee', 'last_name': u'', 'created_at': datetime.datetime(2017,
+11, 15, 1, 13, 26, 991000, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 11, 15, 1, 13, 26, 991000, tzinfo=<UTC>), 'email': u'', 'notes': None, u'id': 4}]>
+>>> b = Book.objects.get(id=3).Authors.get(id=2)
+>>> b = Book.objects.get(id=3).Authors.filter(id=2)
+>>> b.id = null
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'null' is not defined
+>>> b = Book.objects.get(id=3)
+>>> e = Author.objects.first()
+>>> b.QuerySet.remove(e)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Book' object has no attribute 'QuerySet'
+>>> this_book = Book.objects.get(id=3)
+>>> this_author = Author.objects.first()
+>>> this_author.Books.remove(this_book)
+>>> Books.objects.get(id=3).Authors.all().values()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'Books' is not defined
+>>> Author.objects.get(id=2).Books.all().values()
+<QuerySet [{'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 4, 931000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 4, 931000, tzinfo=<UTC>), 'desc': u'', u'id': 1,
+ 'name': u'C sharp'}, {'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 14, 527000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 14, 527000, tzinfo=<UTC>), 'desc': u
+'', u'id': 2, 'name': u'Java'}, {'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 24, 606000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 24, 606000, tzinfo=<UTC>),
+ 'desc': u'', u'id': 3, 'name': u'Python'}]>
+>>> Book.objects.get(id=2).Authors.all().values()
+<QuerySet [{'first_name': u'Mike', 'last_name': u'', 'created_at': datetime.datetime(2017, 11, 15, 1, 13, 7, 265000, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 11, 15, 1, 13, 7, 2650
+00, tzinfo=<UTC>), 'email': u'', 'notes': None, u'id': 1}, {'first_name': u'Speros', 'last_name': u'', 'created_at': datetime.datetime(2017, 11, 15, 1, 13, 14, 568000, tzinfo=<UTC>), 'updated_
+at': datetime.datetime(2017, 11, 15, 1, 13, 14, 568000, tzinfo=<UTC>), 'email': u'', 'notes': None, u'id': 2}, {'first_name': u'John', 'last_name': u'', 'created_at': datetime.datetime(2017, 1
+1, 15, 1, 13, 21, 75000, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 11, 15, 1, 13, 21, 75000, tzinfo=<UTC>), 'email': u'', 'notes': None, u'id': 3}, {'first_name': u'Jadee', 'last_na
+me': u'', 'created_at': datetime.datetime(2017, 11, 15, 1, 13, 26, 991000, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 11, 15, 1, 13, 26, 991000, tzinfo=<UTC>), 'email': u'', 'notes':
+ None, u'id': 4}]>
+>>> Book.objects.get(id=3).Authors.all().values()
+<QuerySet [{'first_name': u'Speros', 'last_name': u'', 'created_at': datetime.datetime(2017, 11, 15, 1, 13, 14, 568000, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 11, 15, 1, 13, 14,
+568000, tzinfo=<UTC>), 'email': u'', 'notes': None, u'id': 2}, {'first_name': u'John', 'last_name': u'', 'created_at': datetime.datetime(2017, 11, 15, 1, 13, 21, 75000, tzinfo=<UTC>), 'updated
+_at': datetime.datetime(2017, 11, 15, 1, 13, 21, 75000, tzinfo=<UTC>), 'email': u'', 'notes': None, u'id': 3}, {'first_name': u'Jadee', 'last_name': u'', 'created_at': datetime.datetime(2017,
+11, 15, 1, 13, 26, 991000, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 11, 15, 1, 13, 26, 991000, tzinfo=<UTC>), 'email': u'', 'notes': None, u'id': 4}]>
+>>> a = Book.objects.get(id=3).Authors.first()
+>>> a.remove()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Author' object has no attribute 'remove'
+>>> a.clear
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Author' object has no attribute 'clear'
+>>> a.clear()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Author' object has no attribute 'clear'
+>>> b = Book.objects.get(id=3)
+>>> a = Author.objects.first()
+>>> a.Book = None
+>>> Book.objects.get(id=3).Authors.all().values()
+<QuerySet [{'first_name': u'Speros', 'last_name': u'', 'created_at': datetime.datetime(2017, 11, 15, 1, 13, 14, 568000, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 11, 15, 1, 13, 14,
+568000, tzinfo=<UTC>), 'email': u'', 'notes': None, u'id': 2}, {'first_name': u'John', 'last_name': u'', 'created_at': datetime.datetime(2017, 11, 15, 1, 13, 21, 75000, tzinfo=<UTC>), 'updated
+_at': datetime.datetime(2017, 11, 15, 1, 13, 21, 75000, tzinfo=<UTC>), 'email': u'', 'notes': None, u'id': 3}, {'first_name': u'Jadee', 'last_name': u'', 'created_at': datetime.datetime(2017,
+11, 15, 1, 13, 26, 991000, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 11, 15, 1, 13, 26, 991000, tzinfo=<UTC>), 'email': u'', 'notes': None, u'id': 4}]>
+>>> a.save()
+>>> Book.objects.get(id=3).Authors.all().values()
+<QuerySet [{'first_name': u'Speros', 'last_name': u'', 'created_at': datetime.datetime(2017, 11, 15, 1, 13, 14, 568000, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 11, 15, 1, 13, 14,
+568000, tzinfo=<UTC>), 'email': u'', 'notes': None, u'id': 2}, {'first_name': u'John', 'last_name': u'', 'created_at': datetime.datetime(2017, 11, 15, 1, 13, 21, 75000, tzinfo=<UTC>), 'updated
+_at': datetime.datetime(2017, 11, 15, 1, 13, 21, 75000, tzinfo=<UTC>), 'email': u'', 'notes': None, u'id': 3}, {'first_name': u'Jadee', 'last_name': u'', 'created_at': datetime.datetime(2017,
+11, 15, 1, 13, 26, 991000, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 11, 15, 1, 13, 26, 991000, tzinfo=<UTC>), 'email': u'', 'notes': None, u'id': 4}]>
+>>> b = Book.objects.get(id=3)
+>>> a = Author.objects.first()
+>>> a.Book = None
+>>> a.save()
+>>> Book.objects.get(id=3).Authors.all().values()
+<QuerySet [{'first_name': u'Speros', 'last_name': u'', 'created_at': datetime.datetime(2017, 11, 15, 1, 13, 14, 568000, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 11, 15, 1, 13, 14,
+568000, tzinfo=<UTC>), 'email': u'', 'notes': None, u'id': 2}, {'first_name': u'John', 'last_name': u'', 'created_at': datetime.datetime(2017, 11, 15, 1, 13, 21, 75000, tzinfo=<UTC>), 'updated
+_at': datetime.datetime(2017, 11, 15, 1, 13, 21, 75000, tzinfo=<UTC>), 'email': u'', 'notes': None, u'id': 3}, {'first_name': u'Jadee', 'last_name': u'', 'created_at': datetime.datetime(2017,
+11, 15, 1, 13, 26, 991000, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 11, 15, 1, 13, 26, 991000, tzinfo=<UTC>), 'email': u'', 'notes': None, u'id': 4}]>
+>>> b = Book.objects.get(id=3)
+>>> b = Book.objects.get(id=3).Authors.first()
+>>> b.delete()
+(4, {u'book_authors.Author': 1, u'book_authors.Author_Books': 3})
+>>> Book.objects.get(id=3).Authors.all().values()
+<QuerySet [{'first_name': u'John', 'last_name': u'', 'created_at': datetime.datetime(2017, 11, 15, 1, 13, 21, 75000, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 11, 15, 1, 13, 21, 750
+00, tzinfo=<UTC>), 'email': u'', 'notes': None, u'id': 3}, {'first_name': u'Jadee', 'last_name': u'', 'created_at': datetime.datetime(2017, 11, 15, 1, 13, 26, 991000, tzinfo=<UTC>), 'updated_a
+t': datetime.datetime(2017, 11, 15, 1, 13, 26, 991000, tzinfo=<UTC>), 'email': u'', 'notes': None, u'id': 4}]>
+>>> this_book = Book.objects.get(id=2)
+>>> this_author = Author.objects.last()
+>>> this_author.Books.add(this_book)
+>>> Author.objects.get(id=5).Books.all().values()
+<QuerySet [{'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 14, 527000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 14, 527000, tzinfo=<UTC>), 'desc': u'', u'id':
+2, 'name': u'Java'}]>
+>>> Author.objects.get(id=3).Books.all().values()
+<QuerySet [{'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 4, 931000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 4, 931000, tzinfo=<UTC>), 'desc': u'', u'id': 1,
+ 'name': u'C sharp'}, {'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 14, 527000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 14, 527000, tzinfo=<UTC>), 'desc': u
+'', u'id': 2, 'name': u'Java'}, {'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 24, 606000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 24, 606000, tzinfo=<UTC>),
+ 'desc': u'', u'id': 3, 'name': u'Python'}, {'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 32, 54000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 32, 54000, tzin
+fo=<UTC>), 'desc': u'', u'id': 4, 'name': u'PHP'}]>
+>>> Author.objects.get(id=2).Books.all().values()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\query.py", line 380, in get
+    self.model._meta.object_name
+DoesNotExist: Author matching query does not exist.
+>>> Author.objects.get(id=2).Books.all().values()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\query.py", line 380, in get
+    self.model._meta.object_name
+DoesNotExist: Author matching query does not exist.
+>>> Author.objects.get(id=2).all()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\sroep\Desktop\School\Python\myEnvironments\djangoEnv\lib\site-packages\django\db\models\query.py", line 380, in get
+    self.model._meta.object_name
+DoesNotExist: Author matching query does not exist.
+>>> Author.objects.count()
+4
+>>> Author.objects.create(first_name="Speros")
+<Author: Author object>
+>>> Author.objects.all().values()
+<QuerySet [{'first_name': u'Mike', 'last_name': u'', 'created_at': datetime.datetime(2017, 11, 15, 1, 13, 7, 265000, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 11, 15, 3, 2, 44, 9230
+00, tzinfo=<UTC>), 'email': u'', 'notes': None, u'id': 1}, {'first_name': u'John', 'last_name': u'', 'created_at': datetime.datetime(2017, 11, 15, 1, 13, 21, 75000, tzinfo=<UTC>), 'updated_at'
+: datetime.datetime(2017, 11, 15, 1, 13, 21, 75000, tzinfo=<UTC>), 'email': u'', 'notes': None, u'id': 3}, {'first_name': u'Jadee', 'last_name': u'', 'created_at': datetime.datetime(2017, 11,
+15, 1, 13, 26, 991000, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 11, 15, 1, 13, 26, 991000, tzinfo=<UTC>), 'email': u'', 'notes': None, u'id': 4}, {'first_name': u'Ketul', 'last_nam
+e': u'', 'created_at': datetime.datetime(2017, 11, 15, 1, 13, 35, 253000, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 11, 15, 1, 22, 32, 860000, tzinfo=<UTC>), 'email': u'', 'notes':
+None, u'id': 5}, {'first_name': u'Speros', 'last_name': u'', 'created_at': datetime.datetime(2017, 11, 15, 3, 11, 8, 45000, tzinfo=<UTC>), 'updated_at': datetime.datetime(2017, 11, 15, 3, 11,
+8, 45000, tzinfo=<UTC>), 'email': u'', 'notes': None, u'id': 6}]>
+>>> this_book = Book.objects.get(id=1)
+>>> this_author = Author.objects.get(id=6)
+>>> this_author.Books.add(this_book)
+>>> Author.objects.get(id=6).all().values()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Author' object has no attribute 'all'
+>>> Author.objects.get(id=6).Books.all().values()
+<QuerySet [{'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 4, 931000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 4, 931000, tzinfo=<UTC>), 'desc': u'', u'id': 1,
+ 'name': u'C sharp'}]>
+>>> this_book = Book.objects.get(id=2)
+>>> this_author = Author.objects.get(id=6)
+>>> this_author.Books.add(this_book)
+>>> Author.objects.get(id=6).all().values()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Author' object has no attribute 'all'
+>>> Author.objects.get(id=6).Books.all().values()
+<QuerySet [{'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 4, 931000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 4, 931000, tzinfo=<UTC>), 'desc': u'', u'id': 1,
+ 'name': u'C sharp'}, {'updated_at': datetime.datetime(2017, 11, 15, 1, 12, 14, 527000, tzinfo=<UTC>), 'created_at': datetime.datetime(2017, 11, 15, 1, 12, 14, 527000, tzinfo=<UTC>), 'desc': u
+'', u'id': 2, 'name': u'Java'}]>
+>>>

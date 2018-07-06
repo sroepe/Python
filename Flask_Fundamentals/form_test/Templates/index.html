@@ -1,0 +1,22 @@
+<html>
+  <head>
+     <title>Form Test Index</title>
+     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/form.css')}}">
+  </head>
+  <script type="text/javascript" src="{{ url_for('static', filename='js/form.js')}}"></script>
+  <body>
+    <h1>Index Page</h1>
+    <h3>Create a User</h3>
+    <form action='/users' method='post'>
+      Name:<input type='text' name='name'>
+      Email:<input type='text' name='email'>
+      <input type='submit' value='Submit'>
+    </form>
+    <h4>Embedded Python</h4>
+    <p>Name: {{ name }}</p>
+    <p>Email: {{ email}}</p>
+    {% for x in range(0,5) %}
+    <p>{{ email }}</p>
+    {% endfor %}
+  </body>
+</html>

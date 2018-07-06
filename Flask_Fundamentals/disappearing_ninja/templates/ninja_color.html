@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <title>A Ninja!</title>
+  </head>
+  <body>
+    <h1> </h1>
+    {% if color == "blue" %}
+      <img src="{{ url_for('static', filename='img/ninjas/leonardo.jpg')}}" alt="Leonardo">
+    {% elif color == "orange" %}
+      <img src="{{ url_for('static', filename='img/ninjas/michelangelo.jpg')}}" alt="Michelangelo">
+    {% elif color == "red" %}
+      <img src="{{ url_for('static', filename='img/ninjas/raphael.jpg')}}" alt="Raphael">
+    {% elif color == "purple" %}
+      <img src="{{ url_for('static', filename='img/ninjas/donatello.jpg')}}" alt="Donatello">
+    {% else %}
+      <img src="{{ url_for('static', filename='img/ninjas/notapril.jpg')}}" alt="April">
+    {% endif %}
+  </body>
+</html>

@@ -1,0 +1,28 @@
+/*reset*/
+* {
+	outline: 0px;
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+  }
+body {
+  padding: 25px;
+}
+
+table {
+    width: 350px;
+    height: 300px;
+    border: 1px solid black;
+    color: black;
+    border-collapse: none;
+ }
+
+th {
+  height: 50px;
+  border: 1px solid black;
+}
+
+tr {
+  height: 75px;
+  border: 1px solid black;
+}

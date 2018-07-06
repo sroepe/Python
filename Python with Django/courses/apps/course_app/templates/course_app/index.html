@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Courses</title>
+      {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'course_app/css/style.css' %}">
+  </head>
+  <body>
+    <h1>Add a new course</h1>
+    <form action="courses/add" method="POST"> {% csrf_token %}
+      <p>Name:   <input type="text" name="name">  </p>
+      <p>Description: <textarea type="text" name="desc"></textarea> </p>   
+      <p><input type="submit" value="Add"></p>  
+    </form>
+    <h1>Courses</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Course Name</th>
+          <th>Description</th>
+          <th>Date Added</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for Course in Courses %}
+        <tr>
+          <td>{{ Course.name }}</td>
+          <td>{{ Course.desc }}</td>
+          <td> {{ Course.created_at }}</td>
+          <td> <a href="/courses/destroy/{{ Course.id }}">remove</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>

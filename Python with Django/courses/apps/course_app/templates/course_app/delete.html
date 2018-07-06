@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Delete a Course</title>
+  </head>
+  <body>
+    <h2>Are you sure you want to delete the following course?</h2>
+    <p>Name: {{ Course.name }} </p>
+    <p>Description: {{ Course.desc }}</p>
+    <form action="/permdelete/{{ Course.id }}" method="POST"> {% csrf_token %}
+      <input type="submit" name="delbut" value="No"> <input type="submit" name="delbut" value="Yes! I want to delete this.">
+    </form>
+  </body>
+
+
+</html>

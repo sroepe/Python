@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+      {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'ninja_gold_app/css/styles.css' %}" media="screen" title="no title" charset="utf-8">
+    <title>Ninja Gold!!!</title>
+  </head>
+  <body>
+    <div id = "wrapper">
+      <div id = "totalcoins">
+        <h1>Ninja Gold</h1>
+        <img src="{% static 'ninja_gold_app/images/ani_smwcoin.gif' %}">
+        <h1>{{ request.session.totalCoins }}</h1>
+      </div>
+      <div id="boxes">
+        <div class="box">
+          <h2>Farm</h2>
+          <p>(Earns 10 - 20 golds)</p>
+          <form action="/process_money" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="building" value="farm" />
+            <input type="submit" value="Find Gold!"/>
+          </form>
+        </div>  
+        <div class="box">
+          <h2>Cave</h2>
+          <p>(Earns 5 - 10 golds)</p>
+          <form action="/process_money" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="building" value="cave" />
+            <input type="submit" value="Find Gold!"/>
+          </form>
+        </div> 
+        <div class="box">
+          <h2>House</h2>
+          <p>(Earns 2 - 5 golds)</p>
+          <form action="/process_money" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="building" value="house" />
+            <input type="submit" value="Find Gold!"/>
+          </form>
+        </div> 
+        <div class="box">
+          <h2>Casino</h2>
+          <p>(Earns / Takes 0 - 50 golds)</p>
+          <form action="/process_money" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="building" value="casino" />
+            <input type="submit" value="Find Gold!"/>
+          </form>
+        </div>
+      </div>  
+      <div id="activities">
+        <h3>Activities:</h3>
+        <p>
+          {% for log in request.session.log %}
+            <p>{{ log }}</p>
+          {% endfor %}
+        </p>
+      </div>
+    <a href="/newgame">NEW GAME</a>
+    </div> 
+  </body>
+</html>
